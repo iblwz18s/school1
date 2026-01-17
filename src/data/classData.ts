@@ -1,25 +1,5 @@
-export const teacherData: Record<string, { name: string; subject: string }> = {
-  "math-3": {
-    name: "أستاذ مشعل قناص الرويلي",
-    subject: "معلم الرياضيات"
-  },
-  "reading-3": {
-    name: "أستاذ ماجد بطيح العنزي",
-    subject: "معلم لغتي"
-  },
-  "reading-6": {
-    name: "أ.محمد عايد العنزي",
-    subject: "معلم لغتي"
-  },
-  "math-6": {
-    name: "أ. وليد عايد الرويلي",
-    subject: "معلم الرياضيات"
-  },
-  "science-6": {
-    name: "أ. مرضي خليل العنزي",
-    subject: "معلم العلوم"
-  }
-};
+// This file has been cleaned - teacher data is now managed dynamically through the database
+// See TeacherManagement component in AdminPanel for adding/editing teachers
 
 export const grade3Students = [
   "باسل عبدالعزيز محمد المصلوخي",

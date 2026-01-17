@@ -3,14 +3,7 @@ import Stack from "@/components/Stack";
 import { supabase } from "@/integrations/supabase/client";
 import { Loader2 } from "lucide-react";
 
-// Fallback static images
-import training1 from "@/assets/training/training-1.png";
-import training2 from "@/assets/training/training-2.png";
-import training3 from "@/assets/training/training-3.png";
-import training4 from "@/assets/training/training-4.png";
-import training5 from "@/assets/training/training-5.png";
-
-const fallbackImages = [training1, training2, training3, training4, training5];
+// No fallback images - all images will be loaded from database
 
 interface TrainingImage {
   id: string;

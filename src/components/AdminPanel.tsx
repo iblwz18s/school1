@@ -10,6 +10,7 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogFooter } from "
 import { AlertDialog, AlertDialogAction, AlertDialogCancel, AlertDialogContent, AlertDialogDescription, AlertDialogFooter, AlertDialogHeader, AlertDialogTitle } from "@/components/ui/alert-dialog";
 import { toast } from "sonner";
 import { Loader2, Upload, UserPlus, LogOut, Trash2, Image, Pencil, Key } from "lucide-react";
+import TeacherManagement from "@/components/TeacherManagement";
 
 interface TrainingImage {
   id: string;
@@ -331,9 +332,10 @@ const AdminPanel = ({ onLogout }: AdminPanelProps) => {
       </div>
 
       <Tabs defaultValue="images" dir="rtl">
-        <TabsList className="grid w-full grid-cols-2">
+        <TabsList className="grid w-full grid-cols-3">
           <TabsTrigger value="images">شواهد التدريب</TabsTrigger>
           <TabsTrigger value="students">إدارة الطلاب</TabsTrigger>
+          <TabsTrigger value="teachers">إدارة المعلمين</TabsTrigger>
         </TabsList>
 
         <TabsContent value="images" className="space-y-4">
@@ -547,6 +549,10 @@ const AdminPanel = ({ onLogout }: AdminPanelProps) => {
               )}
             </CardContent>
           </Card>
+        </TabsContent>
+
+        <TabsContent value="teachers" className="space-y-4">
+          <TeacherManagement />
         </TabsContent>
       </Tabs>
 
