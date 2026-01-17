@@ -1,0 +1,214 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap');
+
+@font-face {
+  font-family: 'Helvetica Neue Arabic';
+  src: url('/fonts/Helvetica-Neue-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Helvetica Neue Arabic';
+  src: url('/fonts/Helvetica-Neue-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* وزارة التعليم السعودية - نظام التصميم البصري
+   الألوان الأساسية مستخرجة من دليل الهوية البصرية الرسمي
+*/
+
+@layer base {
+  :root {
+    /* الألوان الأساسية - وزارة التعليم */
+    --background: 0 0% 98%;
+    --foreground: 197 65% 22%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 197 65% 22%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 197 65% 22%;
+
+    /* الأخضر الرئيسي #07a869 */
+    --primary: 154 92% 34%;
+    --primary-foreground: 0 0% 100%;
+
+    /* الأزرق #3d7eb9 */
+    --secondary: 209 50% 48%;
+    --secondary-foreground: 0 0% 100%;
+
+    /* التركوازي #0da9a6 */
+    --accent: 179 86% 36%;
+    --accent-foreground: 0 0% 100%;
+
+    /* الرمادي الناعم */
+    --muted: 0 0% 95%;
+    --muted-foreground: 197 20% 45%;
+
+    /* الأحمر للأخطاء */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    /* الأزرق الداكن #15445a */
+    --border: 197 65% 85%;
+    --input: 197 65% 90%;
+    --ring: 154 92% 34%;
+
+    --radius: 0.75rem;
+
+    /* ألوان إضافية للتدرجات */
+    --success: 154 92% 34%;
+    --warning: 40 90% 50%;
+    --info: 209 50% 48%;
+
+    /* تدرج الهوية */
+    --gradient-primary: linear-gradient(135deg, hsl(154 92% 34%), hsl(179 86% 36%));
+    --gradient-secondary: linear-gradient(135deg, hsl(209 50% 48%), hsl(179 86% 36%));
+    --gradient-hero: linear-gradient(180deg, hsl(197 65% 22%) 0%, hsl(209 50% 48%) 100%);
+
+    /* الظلال */
+    --shadow-soft: 0 4px 20px -4px hsl(197 65% 22% / 0.1);
+    --shadow-medium: 0 8px 30px -6px hsl(197 65% 22% / 0.15);
+    --shadow-glow: 0 0 30px hsl(154 92% 34% / 0.2);
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 197 65% 22%;
+    --sidebar-primary: 154 92% 34%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 179 86% 36%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 197 65% 90%;
+    --sidebar-ring: 154 92% 34%;
+  }
+
+  .dark {
+    --background: 197 65% 8%;
+    --foreground: 0 0% 95%;
+
+    --card: 197 65% 12%;
+    --card-foreground: 0 0% 95%;
+
+    --popover: 197 65% 12%;
+    --popover-foreground: 0 0% 95%;
+
+    --primary: 154 92% 40%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 209 50% 55%;
+    --secondary-foreground: 0 0% 100%;
+
+    --accent: 179 86% 42%;
+    --accent-foreground: 0 0% 100%;
+
+    --muted: 197 30% 18%;
+    --muted-foreground: 197 20% 65%;
+
+    --destructive: 0 70% 50%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 197 30% 25%;
+    --input: 197 30% 25%;
+    --ring: 154 92% 40%;
+
+    --sidebar-background: 197 65% 10%;
+    --sidebar-foreground: 0 0% 95%;
+    --sidebar-primary: 154 92% 40%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 179 86% 42%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 197 30% 25%;
+    --sidebar-ring: 154 92% 40%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    font-family: 'IBM Plex Sans Arabic', sans-serif;
+    direction: rtl;
+    font-feature-settings: "ss01" on; /* Enable Arabic numerals */
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'IBM Plex Sans Arabic', sans-serif;
+  }
+
+  /* العناوين - وزن أثقل */
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
+    letter-spacing: -0.01em;
+  }
+
+  h1 {
+    @apply text-3xl md:text-4xl;
+  }
+
+  h2 {
+    @apply text-2xl md:text-3xl;
+  }
+
+  h3 {
+    @apply text-xl md:text-2xl;
+  }
+
+  /* النصوص العادية */
+  p, span, div {
+    font-weight: 400;
+  }
+
+  /* الأرقام العربية */
+  .arabic-nums {
+    font-feature-settings: "ss01" on;
+  }
+}
+
+@layer components {
+  .gradient-primary {
+    background: var(--gradient-primary);
+  }
+
+  .gradient-secondary {
+    background: var(--gradient-secondary);
+  }
+
+  .gradient-hero {
+    background: var(--gradient-hero);
+  }
+
+  .shadow-soft {
+    box-shadow: var(--shadow-soft);
+  }
+
+  .shadow-medium {
+    box-shadow: var(--shadow-medium);
+  }
+
+  .shadow-glow {
+    box-shadow: var(--shadow-glow);
+  }
+
+  .card-hover {
+    @apply transition-all duration-300 hover:scale-[1.02] hover:shadow-medium;
+  }
+
+  .btn-primary-gradient {
+    background: var(--gradient-primary);
+    @apply text-primary-foreground font-bold py-3 px-6 rounded-lg transition-all duration-300;
+  }
+
+  .btn-primary-gradient:hover {
+    @apply opacity-90 scale-[1.02];
+    box-shadow: var(--shadow-glow);
+  }
+}
